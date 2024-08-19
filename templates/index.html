@@ -5,9 +5,9 @@
         <title>Index</title>        
     </header>
     <body>
-        <form action="" class="login_form">
-            <input class="input" type="text" placeholder="Login">
-            <input class="input" type="password" placeholder="Password">
+        <form action="{{ url_for('index') }}" method="POST" class="login_form">
+            <input class="input" type="text" placeholder="Login" name="username">
+            <input class="input" type="password" placeholder="Password" name="password">
             <button class="login_btn" type="submit">Login</button>
         </form>
     </body>
