@@ -3,27 +3,31 @@ from flask.views import MethodView
 
 # Page Index class
 class Index(MethodView):
+
     @staticmethod
     def get():
         return render_template("index.html")
+    
     @staticmethod
     def post():
         if request.method == "POST":
             session['username'] = request.form.get("username")
             session['password'] = request.form.get("password")
-            return redirect("login.html")
+            return redirect("login")
         else:
-            return redirect("index.html")
+            return redirect("index")
 
 # Succesful auth page
 class Login(MethodView):
-    staticmethod
+    
+    @staticmethod
     def get():
         return render_template("login.html")
 
 
 # Page error 404 class
 class PageNotFound():
+    
     @staticmethod
     def page_not_found(e):
         return render_template('page404.html'), 404
